@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description" content="Personal portfolio website" />
+
+    <title>Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <script src="./js/lucide.js"></script>
+  </head>
+
+  <body>
+    <!-- =========================================
+       SITE HEADER
+  ========================================== -->
+
+    <header class="topbar glass">
+      <a href="#home" class="brand" aria-label="Go to homepage">
+        <span>JD</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+
+      <nav class="desktop-nav nav" aria-label="Main navigation">
+        <a href="#home" class="active"> Home </a>
+
+        <a href="#about"> About </a>
+
+        <a href="#services"> Services </a>
+
+        <a href="#experience"> Experience </a>
+
+        <a href="#work"> Work </a>
+      </nav>
+
+      <!-- Header Actions -->
+
+      <div class="top-actions">
+        <!-- Theme Toggle -->
+
+        <button
+          class="theme-switch"
+          type="button"
+          data-theme-toggle
+          aria-label="Toggle theme"
+          aria-pressed="false"
+        >
+          <span aria-hidden="true">
+            <i data-lucide="sun"></i>
+          </span>
+
+          <i aria-hidden="true"></i>
+
+          <span aria-hidden="true">
+            <i data-lucide="moon"></i>
+          </span>
+        </button>
+
+        <!-- Desktop CTA -->
+
+        <a href="#contact" class="hire-btn">
+          Hire me
+          <span aria-hidden="true">
+            <i data-lucide="arrow-up-right" class="icon-lg"></i>
+          </span>
+        </a>
+
+        <!-- Mobile Menu Button -->
+
+        <button
+          id="menuOpen"
+          class="menu-btn"
+          type="button"
+          aria-label="Open menu"
+          aria-controls="mobileMenu"
+        >
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- =========================================
+       APPLICATION LAYOUT
+  ========================================== -->
+
+    <div class="site">
+      <div class="app-grid">
+        <!-- =====================================
+           SIDEBAR
+      ====================================== -->
+
+        <aside class="side-nav glass sidebar" aria-label="Section navigation">
+          <a href="#home" class="active" aria-label="Home">
+            <i data-lucide="house"></i>
+          </a>
+
+          <a href="#about" aria-label="About">
+            <i data-lucide="user-round"></i>
+          </a>
+
+          <a href="#services" aria-label="Services">
+            <i data-lucide="sparkles"></i>
+          </a>
+
+          <a href="#experience" aria-label="Experience">
+            <i data-lucide="clock-3"></i>
+          </a>
+
+          <a href="#work" aria-label="Work">
+            <i data-lucide="briefcase-business"></i>
+          </a>
+
+          <a href="#contact" aria-label="Contact">
+            <i data-lucide="mail"></i>
+          </a>
+        </aside>
+
+        <!-- =====================================
+           MAIN CONTENT
+      ====================================== -->
+
+        <main class="content">
+          <!-- ===================================
+             HERO
+        ==================================== -->
+
+          <section id="home" class="hero">
+            <!-- Hero Intro -->
+
+            <article class="hero-intro glass">
+              <div class="hero-photo">
+                <div class="photo-ring" aria-hidden="true"></div>
+
+                <img src="./assets/profile.png" alt="Profile portrait" />
+              </div>
+
+              <div class="hero-copy">
+                <span class="eyebrow"> Hello, I'm </span>
+
+                <h1>
+                  John
+                  <strong> Doe </strong>
+                </h1>
+
+                <h2>Product Designer &amp; Creative Developer</h2>
+
+                <p>
+                  I design and build thoughtful digital experiences with a focus
+                  on clarity, usability and visual quality.
+                </p>
+
+                <div class="actions">
+                  <a href="#contact" class="primary-btn">
+                    Let's talk
+                    <span aria-hidden="true">
+                      <i data-lucide="arrow-up-right"></i>
+                    </span>
+                  </a>
+
+                  <a href="#work" class="round-btn" aria-label="View work">
+                    <i data-lucide="arrow-down-right"></i>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Services -->
+
+            <section id="services" class="services glass">
+              <h2>What I do</h2>
+
+              <article class="service">
+                <span aria-hidden="true">
+                  <i data-lucide="sparkles"></i>
+                </span>
+
+                <div>
+                  <b> Product Design </b>
+
+                  <p>
+                    Interfaces and experiences that feel clear and intuitive.
+                  </p>
+                </div>
+              </article>
+
+              <article class="service">
+                <span aria-hidden="true">
+                  <i data-lucide="diamond"></i>
+                </span>
+
+                <div>
+                  <b> Web Development </b>
+
+                  <p>Fast, responsive and scalable digital products.</p>
+                </div>
+              </article>
+
+              <article class="service">
+                <span aria-hidden="true">
+                  <i data-lucide="circle"></i>
+                </span>
+
+                <div>
+                  <b> Design Systems </b>
+
+                  <p>Consistent systems that scale with your product.</p>
+                </div>
+              </article>
+            </section>
+          </section>
+
+          <!-- ===================================
+             ABOUT / STATS
+        ==================================== -->
+
+          <section id="about" class="stats glass">
+            <div>
+              <b> 8+ </b>
+
+              <span> Years experience </span>
+            </div>
+
+            <div>
+              <b> 120+ </b>
+
+              <span> Projects delivered </span>
+            </div>
+
+            <div>
+              <b> 40+ </b>
+
+              <span> Happy clients </span>
+            </div>
+
+            <div>
+              <b> 12 </b>
+
+              <span> Awards </span>
+            </div>
+          </section>
+
+          <!-- ===================================
+             SKILLS
+        ==================================== -->
+
+          <section class="skills-row">
+            <!-- Expertise -->
+
+            <article class="expertise glass">
+              <h2>Expertise</h2>
+
+              <div class="skill">
+                <div>
+                  <span> Product Design </span>
+
+                  <span> 95% </span>
+                </div>
+
+                <i>
+                  <em style="width: 95%"></em>
+                </i>
+              </div>
+
+              <div class="skill">
+                <div>
+                  <span> UI / UX </span>
+
+                  <span> 92% </span>
+                </div>
+
+                <i>
+                  <em style="width: 92%"></em>
+                </i>
+              </div>
+
+              <div class="skill">
+                <div>
+                  <span> Frontend </span>
+
+                  <span> 88% </span>
+                </div>
+
+                <i>
+                  <em style="width: 88%"></em>
+                </i>
+              </div>
+
+              <div class="skill">
+                <div>
+                  <span> Prototyping </span>
+
+                  <span> 90% </span>
+                </div>
+
+                <i>
+                  <em style="width: 90%"></em>
+                </i>
+              </div>
+            </article>
+
+            <!-- Principles -->
+
+            <article class="principles glass">
+              <div class="principle">
+                <span aria-hidden="true">
+                  <i data-lucide="diamond"></i>
+                </span>
+
+                <div>
+                  <b> Clarity </b>
+
+                  <p>Make every interaction easy to understand.</p>
+                </div>
+              </div>
+
+              <div class="principle">
+                <span aria-hidden="true">
+                  <i data-lucide="sparkle"></i>
+                </span>
+
+                <div>
+                  <b> Simplicity </b>
+
+                  <p>Remove what does not add meaningful value.</p>
+                </div>
+              </div>
+
+              <div class="principle">
+                <span aria-hidden="true">
+                  <i data-lucide="arrow-up-right"></i>
+                </span>
+
+                <div>
+                  <b> Impact </b>
+
+                  <p>Design should solve real problems.</p>
+                </div>
+              </div>
+
+              <div class="principle">
+                <span aria-hidden="true">
+                  <i data-lucide="infinity"></i>
+                </span>
+
+                <div>
+                  <b> Consistency </b>
+
+                  <p>Build systems that stay coherent.</p>
+                </div>
+              </div>
+            </article>
+          </section>
+
+          <!-- ===================================
+             EXPERIENCE
+        ==================================== -->
+
+          <section id="experience" class="experience glass">
+            <div class="section-head">
+              <h2>Experience</h2>
+
+              <a href="#contact">
+                Let's work together
+                <i data-lucide="arrow-up-right"></i>
+              </a>
+            </div>
+
+            <article class="experience-row">
+              <span class="timeline-dot" aria-hidden="true"></span>
+
+              <div>
+                <b> Senior Product Designer </b>
+
+                <small> Studio Company </small>
+              </div>
+
+              <time> 2022 — Present </time>
+
+              <p>
+                Leading product design and building scalable design systems.
+              </p>
+            </article>
+
+            <article class="experience-row">
+              <span class="timeline-dot" aria-hidden="true"></span>
+
+              <div>
+                <b> Product Designer </b>
+
+                <small> Digital Agency </small>
+              </div>
+
+              <time> 2019 — 2022 </time>
+
+              <p>
+                Designed digital products for startups and growing businesses.
+              </p>
+            </article>
+
+            <article class="experience-row">
+              <span class="timeline-dot" aria-hidden="true"></span>
+
+              <div>
+                <b> UI Designer </b>
+
+                <small> Creative Studio </small>
+              </div>
+
+              <time> 2017 — 2019 </time>
+
+              <p>
+                Created visual systems and user interfaces across platforms.
+              </p>
+            </article>
+          </section>
+
+          <!-- ===================================
+             WORK
+        ==================================== -->
+
+          <section id="work" class="work">
+            <div class="section-head">
+              <h2>Selected Work</h2>
+
+              <a href="#contact"> View all projects ↗ </a>
+            </div>
+
+            <div class="projects">
+              <article class="project glass">
+                <div class="project-cover cover-one">01</div>
+
+                <h3>Finance Dashboard</h3>
+
+                <p>A modern financial experience designed for clarity.</p>
+              </article>
+
+              <article class="project glass">
+                <div class="project-cover cover-two">02</div>
+
+                <h3>Creative Platform</h3>
+
+                <p>A flexible platform for creators and teams.</p>
+              </article>
+
+              <article class="project glass">
+                <div class="project-cover cover-three">03</div>
+
+                <h3>Mobile Experience</h3>
+
+                <p>A focused mobile product with a simple interface.</p>
+              </article>
+            </div>
+          </section>
+
+          <!-- ===================================
+             FOOTER / CONTACT
+        ==================================== -->
+
+          <footer id="contact" class="footer glass">
+            <div>
+              <a href="#home" class="brand footer-brand">
+                <span> JD </span>
+              </a>
+
+              <p>Designing thoughtful experiences for the digital world.</p>
+
+              <small>
+                <i data-lucide="copyright"></i>
+                2025 John Doe
+              </small>
+            </div>
+
+            <div>
+              <h3>Explore</h3>
+
+              <a href="#about"> About </a>
+
+              <a href="#services"> Services </a>
+
+              <a href="#experience"> Experience </a>
+            </div>
+
+            <div>
+              <h3>Contact</h3>
+
+              <a href="mailto:hello@example.com"> hello@example.com </a>
+
+              <a href="tel:+123456789"> +1 234 567 89 </a>
+            </div>
+
+            <div>
+              <h3>Social</h3>
+
+              <div class="socials">
+                <a href="#" aria-label="Instagram">
+                  <i data-lucide="instagram"></i>
+                </a>
+
+                <a href="#" aria-label="Dribbble">
+                  <i data-lucide="dribbble"></i>
+                </a>
+
+                <a href="#" aria-label="LinkedIn">
+                  <i data-lucide="linkedin"></i>
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <h3>Availability</h3>
+
+              <span> Available for selected projects. </span>
+            </div>
+          </footer>
+        </main>
+      </div>
+    </div>
+
+    <!-- =========================================
+       MOBILE MENU
+  ========================================== -->
+
+    <div id="mobileMenu" class="mobile-menu" aria-label="Mobile navigation">
+      <button id="menuClose" type="button" aria-label="Close menu">×</button>
+
+      <a href="#home"> Home </a>
+
+      <a href="#about"> About </a>
+
+      <a href="#services"> Services </a>
+
+      <a href="#experience"> Experience </a>
+
+      <a href="#work"> Work </a>
+
+      <a href="#contact"> Contact </a>
+    </div>
+
+    <!-- =========================================
+       JAVASCRIPT
+  ========================================== -->
+
+    <script src="./js/script.js"></script>
+
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
