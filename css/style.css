@@ -74,7 +74,7 @@
 
 html {
   min-width: 320px;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 body {
@@ -91,7 +91,7 @@ body {
       rgba(238, 241, 251, 0.62),
       rgba(238, 241, 251, 0.42)
     ),
-    url("../assets/bg3.jpg");
+    url("../assets/bg4.jpg");
 
   background-size: cover;
   background-position: center;
@@ -113,7 +113,7 @@ body {
 [data-theme="dark"] body {
   background:
     linear-gradient(135deg, rgba(7, 9, 18, 0.72), rgba(8, 10, 20, 0.58)),
-    url("../assets/bg3.jpg");
+    url("../assets/bg4.jpg");
 
   background-size: cover;
   background-position: center;
@@ -905,7 +905,7 @@ button {
 }
 
 .project-cover {
-  height: 150px;
+  height: 400px;
 
   display: flex;
   align-items: flex-end;
@@ -919,18 +919,27 @@ button {
 
   font-size: 32px;
   font-weight: 800;
+
+  overflow: hidden;
+
+  background: var(--surface-strong);
 }
 
-.cover-one {
-  background: linear-gradient(135deg, #5541ee, #b1a4ff);
+.project-cover img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition: transform 0.4s ease;
+  border-radius: 16px;
 }
 
-.cover-two {
-  background: linear-gradient(135deg, #2c356e, #8b91ff);
-}
-
-.cover-three {
-  background: linear-gradient(135deg, #8167ff, #e1d8ff);
+.project:hover .project-cover img {
+  transform: scale(1.05);
 }
 
 .project h3 {
@@ -1080,6 +1089,10 @@ button {
 /* =========================================================
    MOBILE
 ========================================================= */
+
+.mobile-menu {
+  display: none;
+}
 
 @media (max-width: 680px) {
   .topbar {

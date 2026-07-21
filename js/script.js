@@ -15,7 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const menuCloseButton = document.getElementById("menuClose");
 
-  const navigationLinks = document.querySelectorAll(".nav a, .sidebar a");
+  const navigationLinks = document.querySelectorAll(
+    ".nav a, .sidebar a, .mobile-menu a",
+  );
 
   const sections = document.querySelectorAll("section[id], footer[id]");
 
@@ -116,35 +118,90 @@ document.addEventListener("DOMContentLoaded", () => {
   | ACTIVE NAVIGATION
   |--------------------------------------------------------------------------
   */
+  if (sections.length && navigationLinks.length) {
+    let isProgrammaticScroll = false;
 
-  if (
-    sections.length &&
-    navigationLinks.length &&
-    "IntersectionObserver" in window
-  ) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) {
-            return;
-          }
+    let scrollTimeout;
 
-          const activeId = `#${entry.target.id}`;
+    function setActiveLink(id) {
+      navigationLinks.forEach((link) => {
+        link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
+      });
+    }
 
-          navigationLinks.forEach((link) => {
-            const isActive = link.getAttribute("href") === activeId;
+    function updateActiveSection() {
+      if (isProgrammaticScroll) return;
 
-            link.classList.toggle("active", isActive);
-          });
-        });
-      },
-      {
-        rootMargin: "-35% 0px -55% 0px",
-      },
-    );
+      /*
+  |--------------------------------------------------------------------------
+  | TOP OF PAGE
+  |--------------------------------------------------------------------------
+  */
 
-    sections.forEach((section) => {
-      observer.observe(section);
+      if (window.scrollY <= 10) {
+        setActiveLink(sections[0].id);
+        return;
+      }
+
+      /*
+  |--------------------------------------------------------------------------
+  | CURRENT SECTION
+  |--------------------------------------------------------------------------
+  */
+
+      const scrollPosition = window.scrollY + 180;
+
+      let currentSection = sections[0];
+
+      sections.forEach((section) => {
+        if (scrollPosition >= section.offsetTop) {
+          currentSection = section;
+        }
+      });
+
+      if (currentSection) {
+        setActiveLink(currentSection.id);
+      }
+    }
+    window.addEventListener("scroll", updateActiveSection, {
+      passive: true,
     });
+
+    navigationLinks.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        const href = link.getAttribute("href");
+
+        if (!href || !href.startsWith("#")) {
+          return;
+        }
+
+        const target = document.querySelector(href);
+
+        if (!target) return;
+
+        event.preventDefault();
+
+        const targetId = target.id;
+
+        setActiveLink(targetId);
+
+        isProgrammaticScroll = true;
+
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+
+        clearTimeout(scrollTimeout);
+
+        scrollTimeout = setTimeout(() => {
+          isProgrammaticScroll = false;
+
+          setActiveLink(targetId);
+        }, 700);
+      });
+    });
+
+    updateActiveSection();
   }
 });
