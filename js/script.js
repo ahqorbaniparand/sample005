@@ -1,5 +1,48 @@
 document.addEventListener("DOMContentLoaded", () => {
   /*
+|--------------------------------------------------------------------------
+| LOADER
+|--------------------------------------------------------------------------
+*/
+
+  const loader = document.getElementById("loader");
+
+  const loaderLineOne = document.getElementById("loaderLineOne");
+
+  const loaderLineTwo = document.getElementById("loaderLineTwo");
+
+  if (loader && loaderLineOne && loaderLineTwo) {
+    const firstText = "Hi, I'm ahmad rrr.";
+
+    const secondText = "a Product Designer . . .";
+
+    let firstIndex = 0;
+
+    let secondIndex = 0;
+
+    function typeText(element, text, index, speed, callback) {
+      if (index < text.length) {
+        element.textContent += text.charAt(index);
+
+        setTimeout(() => {
+          typeText(element, text, index + 1, speed, callback);
+        }, speed);
+      } else {
+        callback?.();
+      }
+    }
+
+    typeText(loaderLineOne, firstText, firstIndex, 80, () => {
+      setTimeout(() => {
+        typeText(loaderLineTwo, secondText, secondIndex, 80, () => {
+          setTimeout(() => {
+            loader.classList.add("hidden");
+          }, 700);
+        });
+      }, 300);
+    });
+  }
+  /*
   |--------------------------------------------------------------------------
   | DOM REFERENCES
   |--------------------------------------------------------------------------
