@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const loaderLineTwo = document.getElementById("loaderLineTwo");
 
   if (loader && loaderLineOne && loaderLineTwo) {
-    const firstText = "Hi, I'm ahmad rrr.";
+    const firstText = "Hi, I'm John Doe.";
 
     const secondText = "a Product Designer . . .";
 
@@ -157,10 +157,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /*
-  |--------------------------------------------------------------------------
-  | ACTIVE NAVIGATION
-  |--------------------------------------------------------------------------
-  */
+|--------------------------------------------------------------------------
+| ACTIVE NAVIGATION
+|--------------------------------------------------------------------------
+*/
+
   if (sections.length && navigationLinks.length) {
     let isProgrammaticScroll = false;
 
@@ -176,21 +177,40 @@ document.addEventListener("DOMContentLoaded", () => {
       if (isProgrammaticScroll) return;
 
       /*
-  |--------------------------------------------------------------------------
-  | TOP OF PAGE
-  |--------------------------------------------------------------------------
-  */
+    |--------------------------------------------------------------------------
+    | TOP OF PAGE
+    |--------------------------------------------------------------------------
+    */
 
       if (window.scrollY <= 10) {
         setActiveLink(sections[0].id);
+
         return;
       }
 
       /*
-  |--------------------------------------------------------------------------
-  | CURRENT SECTION
-  |--------------------------------------------------------------------------
-  */
+    |--------------------------------------------------------------------------
+    | BOTTOM OF PAGE
+    |--------------------------------------------------------------------------
+    */
+
+      const reachedBottom =
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 10;
+
+      if (reachedBottom) {
+        const lastSection = sections[sections.length - 1];
+
+        setActiveLink(lastSection.id);
+
+        return;
+      }
+
+      /*
+    |--------------------------------------------------------------------------
+    | CURRENT SECTION
+    |--------------------------------------------------------------------------
+    */
 
       const scrollPosition = window.scrollY + 180;
 
@@ -206,9 +226,16 @@ document.addEventListener("DOMContentLoaded", () => {
         setActiveLink(currentSection.id);
       }
     }
+
     window.addEventListener("scroll", updateActiveSection, {
       passive: true,
     });
+
+    /*
+  |--------------------------------------------------------------------------
+  | NAVIGATION CLICK
+  |--------------------------------------------------------------------------
+  */
 
     navigationLinks.forEach((link) => {
       link.addEventListener("click", (event) => {
@@ -241,6 +268,8 @@ document.addEventListener("DOMContentLoaded", () => {
           isProgrammaticScroll = false;
 
           setActiveLink(targetId);
+
+          updateActiveSection();
         }, 700);
       });
     });
