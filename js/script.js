@@ -276,4 +276,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateActiveSection();
   }
+
+  /* back to top button */
+
+  const backToTop = document.querySelector("#backToTop");
+
+  window.addEventListener("scroll", () => {
+    backToTop.classList.toggle("show", window.scrollY > 400);
+  });
+
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
 });
