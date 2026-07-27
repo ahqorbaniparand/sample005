@@ -291,4 +291,50 @@ document.addEventListener("DOMContentLoaded", () => {
       behavior: "smooth",
     });
   });
+
+  // contact modal
+
+  const openContactModal = document.querySelector("#openContactModal");
+
+  const closeContactModal = document.querySelector("#closeContactModal");
+
+  const contactModal = document.querySelector("#contactModal");
+
+  // Open Modal
+
+  openContactModal.addEventListener("click", () => {
+    contactModal.classList.add("open");
+
+    contactModal.setAttribute("aria-hidden", "false");
+
+    document.body.classList.add("menu-open");
+  });
+
+  // Close Modal
+
+  function closeModal() {
+    contactModal.classList.remove("open");
+
+    contactModal.setAttribute("aria-hidden", "true");
+
+    document.body.classList.remove("menu-open");
+  }
+
+  closeContactModal.addEventListener("click", closeModal);
+
+  // Close by clicking outside
+
+  contactModal.addEventListener("click", (event) => {
+    if (event.target === contactModal) {
+      closeModal();
+    }
+  });
+
+  // Close with Escape
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && contactModal.classList.contains("open")) {
+      closeModal();
+    }
+  });
 });
