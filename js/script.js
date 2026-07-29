@@ -12,9 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const loaderLineTwo = document.getElementById("loaderLineTwo");
 
   if (loader && loaderLineOne && loaderLineTwo) {
-    const firstText = "Hi, I'm John Doe.";
+    const firstText = "Hi, I'm Saman Bahrami.";
 
-    const secondText = "a Product Designer . . .";
+    const secondText = "a Software Engineer & Product Manager . . .";
 
     let firstIndex = 0;
 
@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
         typeText(loaderLineTwo, secondText, secondIndex, 80, () => {
           setTimeout(() => {
             loader.classList.add("hidden");
+            initSkillAnimation();
           }, 700);
         });
       }, 300);
@@ -374,4 +375,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
     progress.style.width = percent + "%";
   });
+
+  // SKILL
+  function initSkillAnimation() {
+    const skillBars = document.querySelectorAll(".skill em");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          const bar = entry.target;
+
+          bar.style.width = bar.dataset.width + "%";
+
+          observer.unobserve(bar);
+        });
+      },
+      {
+        threshold: 0.3,
+      },
+    );
+
+    skillBars.forEach((bar) => observer.observe(bar));
+  }
 });

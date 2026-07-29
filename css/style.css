@@ -721,12 +721,10 @@ button {
 /* =========================================================
    SKILLS SECTION
 ========================================================= */
-
 .skills-row {
   margin-top: 20px;
 
   display: grid;
-
   grid-template-columns:
     minmax(270px, 0.85fr)
     minmax(0, 1.45fr);
@@ -736,7 +734,6 @@ button {
 
 .expertise {
   padding: 22px;
-
   border-radius: var(--radius-xl);
 }
 
@@ -747,32 +744,41 @@ button {
 .skill > div {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   margin-bottom: 8px;
 
   font-size: 11px;
 }
 
+/* Track */
+
 .skill i {
   display: block;
 
-  height: 6px;
+  width: 100%;
+  height: 8px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border-radius: 999px;
 
   overflow: hidden;
-
-  border-radius: 10px;
-
-  background: var(--line);
 }
 
-.skill em {
+/* Progress */
+
+.skill i em {
   display: block;
 
-  height: 100%;
+  width: 0;
+  height: 50%;
 
   border-radius: inherit;
 
-  background: var(--primary);
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+
+  transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* =========================================================
@@ -1648,20 +1654,14 @@ body {
   background: rgba(0, 0, 0, 0.24);
   border: 1px solid rgba(255, 255, 255, 0.678);
 
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
 
   pointer-events: none;
 
   transform: translate(-50%, -50%);
 
   z-index: 999999;
-
-  transition:
-    width 0.1s,
-    height 0.1s,
-    background 0.1s,
-    border 0.1s;
 }
 
 /* scroll progress */
