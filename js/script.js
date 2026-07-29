@@ -337,4 +337,27 @@ document.addEventListener("DOMContentLoaded", () => {
       closeModal();
     }
   });
+
+  // smooth scroll
+  const lenis = new Lenis({
+    duration: 2,
+    smoothWheel: true,
+    wheelMultiplier: 1,
+    touchMultiplier: 2,
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+
+  // /* custom cursor */
+  const cursor = document.querySelector(".cursor");
+
+  window.addEventListener("mousemove", (e) => {
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
+  });
 });
