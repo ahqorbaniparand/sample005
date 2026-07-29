@@ -17,6 +17,7 @@
   --muted-light: #8a92aa;
 
   --primary: #624cff;
+  --secondary: #4ca8ff;
   --primary-hover: #5139ed;
   --primary-soft: rgba(98, 76, 255, 0.12);
 
@@ -51,6 +52,7 @@
   --muted-light: #7d849e;
 
   --primary: #8b7dff;
+  --secondary: #6eb9ff;
   --primary-hover: #a096ff;
   --primary-soft: rgba(139, 125, 255, 0.16);
 
@@ -1638,13 +1640,13 @@ body {
   left: 0;
   top: 0;
 
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
 
   border-radius: 50%;
 
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(0, 0, 0, 0.24);
+  border: 1px solid rgba(255, 255, 255, 0.678);
 
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -1656,8 +1658,34 @@ body {
   z-index: 999999;
 
   transition:
-    width 0.15s,
-    height 0.15s,
-    background 0.15s,
-    border 0.15s;
+    width 0.1s,
+    height 0.1s,
+    background 0.1s,
+    border 0.1s;
+}
+
+/* scroll progress */
+.scroll-progress {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  width: 0%;
+  height: 2px;
+
+  z-index: 99999;
+
+  background: linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary),
+    var(--primary)
+  );
+
+  box-shadow:
+    0 0 10px rgba(59, 171, 246, 0.6),
+    0 0 25px rgba(82, 146, 248, 0.45),
+    0 0 40px rgba(117, 170, 255, 0.25);
+
+  border-radius: 999px;
 }
