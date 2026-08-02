@@ -341,7 +341,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // smooth scroll
   const lenis = new Lenis({
-    duration: 2,
+    duration: 1.5,
     smoothWheel: true,
     wheelMultiplier: 1,
     touchMultiplier: 2,

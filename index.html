@@ -18,7 +18,6 @@
       rel="stylesheet"
     />
 
-    <!-- styles -->
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/loading.css" />
   </head>
@@ -44,7 +43,7 @@
 
     <header class="topbar glass">
       <a href="#home" class="brand" aria-label="Go to homepage">
-        <span>SB</span>
+        <span>JD</span>
       </a>
 
       <!-- Desktop Navigation -->
@@ -57,6 +56,8 @@
         <a href="#experience"> Experience </a>
 
         <a href="#work"> Work </a>
+
+        <a href="#blog"> Blog </a>
 
         <a href="#contact"> Contact </a>
       </nav>
@@ -238,6 +239,29 @@
             </svg>
           </a>
 
+          <a href="#blog" aria-label="Blog">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-news"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M16 6h3a1 1 0 0 1 1 1v11a2 2 0 0 1 -4 0v-13a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1v12a3 3 0 0 0 3 3h11"
+              />
+              <path d="M8 8l4 0" />
+              <path d="M8 12l4 0" />
+              <path d="M8 16l4 0" />
+            </svg>
+          </a>
+
           <a href="#contact" aria-label="Contact">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -347,6 +371,8 @@
                 </div>
               </div>
             </article>
+
+            <!-- Services -->
 
             <section class="services glass">
               <h2>What I do</h2>
@@ -779,10 +805,12 @@
               <time> 2019 — 2022 </time>
 
               <p>
-                Experienced Product Manager specializing in defining product
-                strategies, managing product lifecycles, and collaborating with
-                cross-functional teams to deliver impactful, user-focused
-                solutions.
+                Experienced Senior Product Manager responsible for defining
+                product vision, developing strategic roadmaps, and leading
+                cross-functional teams to deliver successful digital products.
+                Skilled in analyzing customer needs, prioritizing features,
+                managing product lifecycles, and driving continuous improvements
+                based on data and user feedback.
               </p>
             </article>
 
@@ -798,9 +826,12 @@
               <time> 2017 — 2019 </time>
 
               <p>
-                Building scalable software solutions, leading technical
-                decisions, and delivering high-quality products with modern
-                engineering practices.
+                Software Engineer focused on designing, developing, and
+                maintaining reliable software solutions. Experienced in building
+                scalable applications, writing clean and maintainable code, and
+                collaborating with cross-functional teams to deliver
+                high-quality products. Building scalable software solutions,
+                leading technical decisions.
               </p>
             </article>
           </section>
@@ -811,7 +842,7 @@
 
           <section id="work" class="work">
             <div class="section-head">
-              <h2>Selected Work</h2>
+              <h2>Projects</h2>
             </div>
 
             <div class="projects">
@@ -899,6 +930,295 @@
                   A scalable CRM solution built for managing customer data...
                 </p>
               </article>
+              <article class="project glass">
+                <div class="project-cover">
+                  <img
+                    src="./assets/sample/sa01.jpg"
+                    alt="Project 1"
+                    loading="lazy"
+                  />
+                </div>
+
+                <h3>Modern Enterprise Web Platform</h3>
+
+                <p>A modern Enterprise experience designed for clarity.</p>
+              </article>
+
+              <article class="project glass">
+                <div class="project-cover">
+                  <img
+                    src="./assets/sample/sa02.jpg"
+                    alt="Project 2"
+                    loading="lazy"
+                  />
+                </div>
+
+                <h3>Creative Platform</h3>
+
+                <p>A flexible platform for creators and teams.</p>
+              </article>
+              <article class="project glass">
+                <div class="project-cover">
+                  <img
+                    src="./assets/sample/sa03.jpg"
+                    alt="Project 3"
+                    loading="lazy"
+                  />
+                </div>
+
+                <h3>Mobile Experience</h3>
+
+                <p>A focused mobile product with a simple interface.</p>
+              </article>
+
+              <article class="project glass">
+                <div class="project-cover">
+                  <img
+                    src="./assets/sample/sa04.jpg"
+                    alt="Project 3"
+                    loading="lazy"
+                  />
+                </div>
+
+                <h3>E-Commerce Platform</h3>
+
+                <p>A focused mobile product with a simple interface.</p>
+              </article>
+            </div>
+          </section>
+
+          <!-- ===================================
+             BLOG 
+        ==================================== -->
+
+          <section id="blog" class="blog-wrapper glass">
+            <!-- header -->
+            <header class="blog-header">
+              <h1>Recent Articles</h1>
+              <p class="subtitle">
+                Thoughts, tutorials, and insights on software development,
+                product strategy, and more.
+              </p>
+            </header>
+
+            <!-- carousel -->
+            <div class="carousel-container">
+              <div class="carousel-track" id="carouselTrack">
+                <!-- کارت‌ها به صورت هاردکد در HTML -->
+                <a href="post.html" class="blog-link">
+                  <div class="blog-card">
+                    <span class="card-category development">Development</span>
+                    <h3 class="card-title">
+                      Clean Architecture in Angular Applications
+                    </h3>
+                    <p class="card-description">
+                      A practical guide to implementing clean architecture with
+                      Angular for scalable enterprise applications.
+                    </p>
+                    <div class="card-footer">
+                      <span class="author">Seman Bahrami</span>
+                      <div class="meta-info">
+                        <span
+                          ><i class="far fa-calendar-alt"></i> May 12,
+                          2025</span
+                        >
+                        <span><i class="far fa-clock"></i> 6 min read</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a href="post.html" class="blog-link">
+                  <div class="blog-card">
+                    <span class="card-category development">Development</span>
+                    <h3 class="card-title">
+                      Clean Architecture in Angular Applications
+                    </h3>
+                    <p class="card-description">
+                      A practical guide to implementing clean architecture with
+                      Angular for scalable enterprise applications.
+                    </p>
+                    <div class="card-footer">
+                      <span class="author">Seman Bahrami</span>
+                      <div class="meta-info">
+                        <span
+                          ><i class="far fa-calendar-alt"></i> May 12,
+                          2025</span
+                        >
+                        <span><i class="far fa-clock"></i> 6 min read</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a href="post.html" class="blog-link">
+                  <div class="blog-card">
+                    <span class="card-category product">Product</span>
+                    <h3 class="card-title">How I Approach Product Strategy</h3>
+                    <p class="card-description">
+                      Key principles and frameworks I use to build user-centered
+                      products that create real value.
+                    </p>
+                    <div class="card-footer">
+                      <span class="author">Seman Bahrami</span>
+                      <div class="meta-info">
+                        <span
+                          ><i class="far fa-calendar-alt"></i> Apr 28,
+                          2025</span
+                        >
+                        <span><i class="far fa-clock"></i> 7 min read</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a href="post.html" class="blog-link">
+                  <div class="blog-card">
+                    <span class="card-category tips">Tips &amp; Tricks</span>
+                    <h3 class="card-title">
+                      10 VS Code Extensions I Can't Live Without
+                    </h3>
+                    <p class="card-description">
+                      A list of VS Code extensions that supercharge my
+                      productivity as a developer.
+                    </p>
+                    <div class="card-footer">
+                      <span class="author">Seman Bahrami</span>
+                      <div class="meta-info">
+                        <span
+                          ><i class="far fa-calendar-alt"></i> Apr 15,
+                          2025</span
+                        >
+                        <span><i class="far fa-clock"></i> 4 min read</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a href="post.html" class="blog-link">
+                  <div class="blog-card">
+                    <span class="card-category development">Development</span>
+                    <h3 class="card-title">
+                      Clean Architecture in Angular Applications
+                    </h3>
+                    <p class="card-description">
+                      A practical guide to implementing clean architecture with
+                      Angular for scalable enterprise applications.
+                    </p>
+                    <div class="card-footer">
+                      <span class="author">Seman Bahrami</span>
+                      <div class="meta-info">
+                        <span
+                          ><i class="far fa-calendar-alt"></i> May 12,
+                          2025</span
+                        >
+                        <span><i class="far fa-clock"></i> 6 min read</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a href="post.html" class="blog-link">
+                  <div class="blog-card">
+                    <span class="card-category development">Development</span>
+                    <h3 class="card-title">
+                      Clean Architecture in Angular Applications
+                    </h3>
+                    <p class="card-description">
+                      A practical guide to implementing clean architecture with
+                      Angular for scalable enterprise applications.
+                    </p>
+                    <div class="card-footer">
+                      <span class="author">Seman Bahrami</span>
+                      <div class="meta-info">
+                        <span
+                          ><i class="far fa-calendar-alt"></i> May 12,
+                          2025</span
+                        >
+                        <span><i class="far fa-clock"></i> 6 min read</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a href="post.html" class="blog-link">
+                  <div class="blog-card">
+                    <span class="card-category development">Development</span>
+                    <h3 class="card-title">
+                      Clean Architecture in Angular Applications
+                    </h3>
+                    <p class="card-description">
+                      A practical guide to implementing clean architecture with
+                      Angular for scalable enterprise applications.
+                    </p>
+                    <div class="card-footer">
+                      <span class="author">Seman Bahrami</span>
+                      <div class="meta-info">
+                        <span
+                          ><i class="far fa-calendar-alt"></i> May 12,
+                          2025</span
+                        >
+                        <span><i class="far fa-clock"></i> 6 min read</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a href="post.html" class="blog-link">
+                  <div class="blog-card">
+                    <span class="card-category development">Development</span>
+                    <h3 class="card-title">
+                      Clean Architecture in Angular Applications
+                    </h3>
+                    <p class="card-description">
+                      A practical guide to implementing clean architecture with
+                      Angular for scalable enterprise applications.
+                    </p>
+                    <div class="card-footer">
+                      <span class="author">Seman Bahrami</span>
+                      <div class="meta-info">
+                        <span
+                          ><i class="far fa-calendar-alt"></i> May 12,
+                          2025</span
+                        >
+                        <span><i class="far fa-clock"></i> 6 min read</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <!-- در صورت نیاز کارت‌های بیشتر اینجا اضافه کنید -->
+              </div>
+            </div>
+            <!-- controls -->
+            <div class="carousel-controls">
+              <button class="btn-prev" id="prevBtn" aria-label="قبلی">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M15 6l-6 6l6 6" />
+                </svg>
+              </button>
+              <div class="dots" id="dotsContainer"></div>
+              <button class="btn-next" id="nextBtn" aria-label="بعدی">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M9 6l6 6l-6 6" />
+                </svg>
+              </button>
             </div>
           </section>
 
@@ -908,15 +1228,21 @@
 
           <footer id="contact" class="footer glass">
             <div>
+              <a href="#home" class="brand footer-brand">
+                <span> JD </span>
+              </a>
+
               <p>Designing thoughtful experiences for the digital world.</p>
 
-              <small> © 2025 John Doe </small>
+              <small> © 2026 Saman Bahrami </small>
             </div>
 
             <div>
               <h3>Explore</h3>
 
               <a href="#about"> About </a>
+
+              <a href="#blog"> Blog </a>
 
               <a href="#experience"> Experience </a>
             </div>
@@ -1071,6 +1397,8 @@
 
       <a href="#work"> Work </a>
 
+      <a href="#blog"> Blog </a>
+
       <a href="#contact"> Contact </a>
     </div>
 
@@ -1172,6 +1500,7 @@
 
     <script src="./js/tabler.min.js"></script>
     <script src="./js/lenis.min.js"></script>
+    <script src="./js/carousel.js"></script>
     <script src="./js/script.js"></script>
   </body>
 </html>
