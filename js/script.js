@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
           setTimeout(() => {
             loader.classList.add("hidden");
             initSkillAnimation();
-          }, 700);
+          }, 300);
         });
       }, 300);
     });

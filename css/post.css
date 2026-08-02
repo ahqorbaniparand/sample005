@@ -128,7 +128,9 @@
   color: var(--muted);
 }
 .post-featured-image {
-  margin: 0 -2.8rem 2rem -2.8rem;
+  margin: 0;
+  display: flex;
+  justify-content: center;
   overflow: hidden;
   border-radius: var(--radius-md);
 }
@@ -143,6 +145,7 @@
   font-size: 1.05rem;
   line-height: 1.8;
   color: var(--text-soft);
+  margin-top: 50px;
 }
 .post-content h2 {
   font-size: 1.8rem;
