@@ -1,16 +1,36 @@
-(function () {
+(function() {
+  // ===== گرفتن المان‌ها =====
   const track = document.getElementById("carouselTrack");
   const dotsContainer = document.getElementById("dotsContainer");
   const prevBtn = document.getElementById("prevBtn");
   const nextBtn = document.getElementById("nextBtn");
 
-  const slides = Array.from(track.children);
-  const totalSlides = slides.length;
+  // بررسی وجود المان‌ها
+  if (!track || !dotsContainer || !prevBtn || !nextBtn) {
+    console.warn("❌ عناصر کروسل پیدا نشدند!");
+    return;
+  }
 
+  // ===== گرفتن کارت‌ها =====
+  let slides = Array.from(track.children);
+  let totalSlides = slides.length;
+
+  if (totalSlides === 0) {
+    console.warn("❌ هیچ کارتی در کروسل وجود ندارد!");
+    return;
+  }
+
+  // ===== تشخیص راست‌چین =====
+  const isRTL = document.documentElement.getAttribute("dir") === "rtl";
+
+  // ===== متغیرها =====
   let currentIndex = 0;
   let visibleSlides = 3;
-  const gap = 24;
+  const gap = 24; // هماهنگ با CSS
+  let isAnimating = false;
+  let timeoutId = null;
 
+  // ===== تعداد اسلایدهای قابل مشاهده =====
   function getVisibleSlides() {
     const width = window.innerWidth;
     if (width < 640) return 1;
@@ -18,40 +38,40 @@
     return 3;
   }
 
-  // این تابع هر بار که صدا زده می‌شود، عرض واقعی را محاسبه می‌کند
+  // ===== محاسبه عرض هر کارت =====
   function getSlideWidth() {
     const containerWidth = track.parentElement.getBoundingClientRect().width;
     const visible = getVisibleSlides();
     visibleSlides = visible;
-    const gapsCount = visible - 1;
-    const totalGap = gapsCount * gap;
+    const totalGap = (visible - 1) * gap;
     let width = (containerWidth - totalGap) / visible;
-
-    // اگر به هر دلیل width صفر یا نامعتبر شد، از عرض اولین کارت استفاده کن
     if (!width || width <= 0 || isNaN(width)) {
-      const firstCard = slides[0];
-      if (firstCard) {
-        width = firstCard.getBoundingClientRect().width + gap;
-      } else {
-        width = 300;
-      }
+      width = 300;
     }
     return width;
   }
 
-  function applyTransform() {
-    const slideWidth = getSlideWidth(); // هر بار از DOM می‌خوانیم
-    const offset = currentIndex * (slideWidth + gap);
-    track.style.transform = `translateX(-${offset}px)`;
-  }
-
+  // ===== به‌روزرسانی استایل کارت‌ها =====
   function updateSlideStyles() {
     const slideWidth = getSlideWidth();
     slides.forEach((card) => {
       card.style.flex = `0 0 ${slideWidth}px`;
+      card.style.minWidth = `${slideWidth}px`;
+      card.style.maxWidth = `${slideWidth}px`;
     });
   }
 
+  // ===== حرکت به اسلاید مورد نظر =====
+  function applyTransform() {
+    const slideWidth = getSlideWidth();
+    const offset = currentIndex * (slideWidth + gap);
+    // در RTL از مقدار مثبت استفاده می‌کنیم
+    const translateValue = isRTL ? offset : -offset;
+    track.style.transition = "transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)";
+    track.style.transform = `translateX(${translateValue}px)`;
+  }
+
+  // ===== ساخت دات‌ها =====
   function buildDots() {
     dotsContainer.innerHTML = "";
     const totalDots = Math.max(1, totalSlides - visibleSlides + 1);
@@ -59,39 +79,67 @@
       const dot = document.createElement("button");
       dot.className = "dot" + (i === currentIndex ? " active" : "");
       dot.dataset.index = i;
-      dot.addEventListener("click", function () {
-        goTo(parseInt(this.dataset.index));
+      dot.setAttribute("aria-label", `رفتن به اسلاید ${i + 1}`);
+      dot.addEventListener("click", function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const index = parseInt(this.dataset.index);
+        goTo(index);
       });
       dotsContainer.appendChild(dot);
     }
   }
 
+  // ===== به‌روزرسانی دات‌ها =====
   function updateDots() {
     const dots = dotsContainer.children;
     const totalDots = dots.length;
-    if (currentIndex >= totalDots) {
-      currentIndex = totalDots - 1;
+
+    const expectedDots = Math.max(1, totalSlides - visibleSlides + 1);
+    if (totalDots !== expectedDots) {
+      buildDots();
+      return;
     }
+
     for (let i = 0; i < totalDots; i++) {
-      dots[i].classList.toggle("active", i === currentIndex);
+      if (i === currentIndex) {
+        dots[i].classList.add("active");
+      } else {
+        dots[i].classList.remove("active");
+      }
     }
   }
 
+  // ===== حرکت به اسلاید =====
   function goTo(index) {
+    if (isAnimating) return;
+
     const visible = getVisibleSlides();
     visibleSlides = visible;
     const maxIndex = Math.max(0, totalSlides - visibleSlides);
+
     if (index < 0) index = 0;
     if (index > maxIndex) index = maxIndex;
+
+    if (index === currentIndex) return;
+
+    isAnimating = true;
     currentIndex = index;
 
-    // ترتیب اجرا: اول استایل کارت‌ها، بعد حرکت، بعد دات‌ها
     updateSlideStyles();
     applyTransform();
     updateDots();
+
+    if (timeoutId) clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      isAnimating = false;
+      timeoutId = null;
+    }, 550);
   }
 
+  // ===== بعدی =====
   function next() {
+    if (isAnimating) return;
     const maxIndex = Math.max(0, totalSlides - visibleSlides);
     if (currentIndex < maxIndex) {
       goTo(currentIndex + 1);
@@ -100,7 +148,9 @@
     }
   }
 
+  // ===== قبلی =====
   function prev() {
+    if (isAnimating) return;
     if (currentIndex > 0) {
       goTo(currentIndex - 1);
     } else {
@@ -109,8 +159,8 @@
     }
   }
 
+  // ===== تغییر اندازه =====
   let resizeTimeout = null;
-
   function handleResize() {
     if (resizeTimeout) clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(() => {
@@ -119,43 +169,92 @@
         visibleSlides = newVisible;
         buildDots();
       }
-      goTo(currentIndex);
+      updateSlideStyles();
+      applyTransform();
+      updateDots();
       resizeTimeout = null;
-    }, 150);
+    }, 200);
   }
 
+  // ===== راه‌اندازی =====
   function init() {
+    track.style.display = "flex";
+    track.style.flexWrap = "nowrap";
+    track.style.width = "100%";
+
     visibleSlides = getVisibleSlides();
     updateSlideStyles();
     buildDots();
-    goTo(0); // حرکت به اولین اسلاید با عرض واقعی
 
-    // اطمینان از بارگذاری کامل تصاویر
     setTimeout(() => {
-      goTo(currentIndex);
-    }, 200);
+      currentIndex = 0;
+      applyTransform();
+      updateDots();
+    }, 100);
 
-    // اطمینان از بارگذاری کامل فونت‌ها و استایل‌ها
-    window.addEventListener("load", function () {
-      goTo(currentIndex);
-    });
-
-    prevBtn.addEventListener("click", function (e) {
+    // دکمه‌ها
+    prevBtn.addEventListener("click", function(e) {
       e.preventDefault();
+      e.stopPropagation();
       prev();
     });
-    nextBtn.addEventListener("click", function (e) {
+
+    nextBtn.addEventListener("click", function(e) {
       e.preventDefault();
+      e.stopPropagation();
       next();
     });
 
     window.addEventListener("resize", handleResize);
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "ArrowLeft") prev();
-      else if (e.key === "ArrowRight") next();
+
+    // کیبورد (جهت‌ها در RTL برعکس)
+    document.addEventListener("keydown", function(e) {
+      if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+        e.preventDefault();
+        if (isRTL) {
+          if (e.key === "ArrowLeft") next();
+          else prev();
+        } else {
+          if (e.key === "ArrowLeft") prev();
+          else next();
+        }
+      }
     });
+
+    // لمس (جهت‌ها در RTL برعکس)
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    track.addEventListener("touchstart", function(e) {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    track.addEventListener("touchend", function(e) {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 40) {
+        if (isRTL) {
+          if (diff > 0) prev();
+          else next();
+        } else {
+          if (diff > 0) next();
+          else prev();
+        }
+      }
+    }, { passive: true });
+
+    window.addEventListener("load", function() {
+      setTimeout(() => {
+        updateSlideStyles();
+        applyTransform();
+        updateDots();
+      }, 300);
+    });
+
+    console.log("✅ کروسل با موفقیت راه‌اندازی شد!");
   }
 
+  // ===== اجرا =====
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);
   } else {

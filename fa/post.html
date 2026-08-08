@@ -1,13 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html lang="fa" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Single blog post with views & comments stats in sidebar"
+      content="مقاله تک با آمار بازدید و نظرات در نوار کناری"
     />
-    <title>Clean Architecture in Angular | Blog</title>
+    <title>معماری تمیز (Clean Architecture) در Angular | وبلاگ</title>
 
     <link rel="icon" href="./assets/sb.png" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -28,18 +28,18 @@
 
     <!-- ===== TOPBAR ===== -->
     <header class="topbar glass">
-      <a href="index.html" class="brand" aria-label="Go to homepage">
+      <a href="index.html" class="brand" aria-label="رفتن به صفحه اصلی">
         <span>SB</span>
       </a>
 
       <!-- منوی معمولی (مثل صفحه اصلی) -->
-      <nav class="desktop-nav nav" aria-label="Main navigation">
-        <a href="index.html#home">Home</a>
-        <a href="index.html#skill">Skill</a>
-        <a href="index.html#experience">Experience</a>
-        <a href="index.html#work">Work</a>
-        <a href="index.html#blog" class="active">Blog</a>
-        <a href="index.html#contact">Contact</a>
+      <nav class="desktop-nav nav" aria-label="منوی اصلی">
+        <a href="index.html#home">خانه</a>
+        <a href="index.html#skill">مهارت</a>
+        <a href="index.html#experience">تجربه</a>
+        <a href="index.html#work">سابقه</a>
+        <a href="index.html#blog" class="active">بلاگ</a>
+        <a href="index.html#contact">تماس</a>
       </nav>
 
       <div class="top-actions">
@@ -47,7 +47,7 @@
           class="theme-switch"
           type="button"
           data-theme-toggle
-          aria-label="Switch theme"
+          aria-label="تغییر تم"
           aria-pressed="false"
         >
           <span class="theme-icon theme-icon--sun" aria-hidden="true">
@@ -89,7 +89,7 @@
           id="menuOpen"
           class="menu-btn"
           type="button"
-          aria-label="Open menu"
+          aria-label="باز کردن منو"
           aria-controls="mobileMenu"
         >
           <svg
@@ -118,7 +118,7 @@
         <!-- ===== SIDEBAR با آمار به جای آیکون‌های منو ===== -->
         <aside
           class="side-nav glass sidebar stats-sidebar"
-          aria-label="Post stats"
+          aria-label="آمار پست"
         >
           <div class="stat-item">
             <svg
@@ -139,8 +139,8 @@
                 d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"
               />
             </svg>
-            <span class="stat-number" id="viewCountSidebar">1,234</span>
-            <span class="stat-label">Views</span>
+            <span class="stat-number" id="viewCountSidebar">۱٬۲۳۴ </span>
+            <span class="stat-label">بازدید</span>
           </div>
 
           <div class="stat-item">
@@ -162,8 +162,8 @@
               <path d="M8 9l8 0" />
               <path d="M8 13l6 0" />
             </svg>
-            <span class="stat-number" id="commentCountSidebar">45</span>
-            <span class="stat-label">Comments</span>
+            <span class="stat-number" id="commentCountSidebar">۴۵</span>
+            <span class="stat-label">نظرات</span>
           </div>
         </aside>
 
@@ -173,148 +173,156 @@
           <article class="single-post glass">
             <header class="post-header">
               <div class="post-meta">
-                <span class="post-category development">Development</span>
-                <time datetime="2025-05-12">May 12, 2025</time>
-                <span class="post-reading-time">6 min read</span>
+                <span class="post-category development">توسعه</span>
+                <time datetime="2025-05-12">۲۲ اردیبهشت ۱۴۰۴ </time>
+                <span class="post-reading-time">۶ دقیقه مطالعه </span>
               </div>
               <h1 class="post-title">
-                Clean Architecture in Angular Applications
+                معماری تمیز (Clean Architecture) در اپلیکیشن‌های Angular
               </h1>
               <div class="post-author">
                 <img
                   src="./assets/profile.png"
-                  alt="Author"
+                  alt="سامان بهرامی"
                   class="author-avatar"
                 />
                 <div class="author-info">
-                  <span class="author-name">Saman Bahrami</span>
-                  <span class="author-role">Software Engineer</span>
+                  <span class="author-name">سامان بهرامی</span>
+                  <span class="author-role">مهندس نرم‌افزار</span>
                 </div>
               </div>
             </header>
 
             <figure class="post-featured-image">
-              <img src="./assets/post.jpg" alt="Featured image" />
+              <img src="./assets/post.jpg" alt="تصویر شاخص مقاله" />
             </figure>
 
             <div class="post-content">
               <p>
-                Clean Architecture is a software design philosophy that
-                separates concerns in a way that makes your application more
-                maintainable, testable, and scalable. In this article, we'll
-                explore how to implement Clean Architecture in Angular
-                applications effectively.
+                معماری تمیز (Clean Architecture) یک فلسفه طراحی نرم‌افزار است که
+                دغدغه‌ها را به‌گونه‌ای جدا می‌کند که برنامه شما را
+                قابل‌نگهداری‌تر، تست‌پذیرتر و مقیاس‌پذیرتر می‌سازد. در این
+                مقاله، به بررسی نحوه پیاده‌سازی مؤثر معماری تمیز در برنامه‌های
+                Angular می‌پردازیم.
               </p>
 
-              <h2>Why Clean Architecture?</h2>
+              <h2>چرا معماری تمیز؟</h2>
               <p>
-                Angular is a powerful framework, but without a clear
-                architecture, large projects can quickly become unmaintainable.
-                Clean Architecture provides a set of rules that help you
-                organize your code into layers, each with a specific
-                responsibility.
+                Angular یک فریم‌ورک قدرتمند است، اما بدون معماری مشخص، پروژه‌های
+                بزرگ به سرعت غیرقابل‌نگهداری می‌شوند. معماری تمیز مجموعه‌ای از
+                قوانین را ارائه می‌دهد که به شما کمک می‌کند کد خود را به
+                لایه‌هایی با مسئولیت مشخص سازماندهی کنید.
               </p>
 
               <blockquote>
-                “The goal of Clean Architecture is to keep the business logic
-                independent of the framework, UI, and infrastructure.”
+                «هدف از معماری تمیز این است که منطق کسب‌وکار را مستقل از
+                فریم‌ورک، رابط کاربری و زیرساخت نگه دارد.»
               </blockquote>
 
-              <h3>The Four Main Layers</h3>
+              <h3>چهار لایه اصلی</h3>
               <ul>
                 <li>
-                  <strong>Entities</strong> – business rules and core domain
-                  models
+                  <strong>نهادها (Entities)</strong> – قوانین کسب‌وکار و مدل‌های
+                  اصلی دامنه
                 </li>
                 <li>
-                  <strong>Use Cases</strong> – application-specific business
-                  rules
+                  <strong>موارد استفاده (Use Cases)</strong> – قوانین کسب‌وکار
+                  مختص برنامه
                 </li>
                 <li>
-                  <strong>Interface Adapters</strong> – presenters, controllers,
-                  gateways
+                  <strong>تطبیق‌دهنده‌های رابط (Interface Adapters)</strong> –
+                  ارائه‌دهنده‌ها، کنترل‌کننده‌ها، دروازه‌ها
                 </li>
                 <li>
-                  <strong>Frameworks & Drivers</strong> – external tools,
-                  databases, web frameworks
+                  <strong
+                    >فریم‌ورک‌ها و درایورها (Frameworks &amp; Drivers)</strong
+                  >
+                  – ابزارهای خارجی، پایگاه‌های داده، فریم‌ورک‌های وب
                 </li>
               </ul>
 
               <p>
-                By following this structure, you can easily swap out frameworks
-                or databases without affecting your core business logic. This
-                makes your application more robust and future‑proof.
+                با پیروی از این ساختار، می‌توانید به راحتی فریم‌ورک‌ها یا
+                پایگاه‌های داده را بدون تأثیر بر منطق اصلی کسب‌وکار خود تعویض
+                کنید. این کار برنامه شما را مقاوم‌تر و آینده‌نگرتر می‌سازد.
               </p>
 
-              <h3>Practical Implementation in Angular</h3>
+              <h3>پیاده‌سازی عملی در Angular</h3>
               <p>
-                In Angular, you can implement Clean Architecture by separating
-                your code into modules that reflect these layers. For example,
-                create a <code>domain</code> folder for entities, a
-                <code>use-cases</code> folder for services that implement
-                business rules, and an <code>infrastructure</code> folder for
-                HTTP clients and repositories.
+                در Angular، می‌توانید معماری تمیز را با جدا کردن کد خود به
+                ماژول‌هایی که این لایه‌ها را منعکس می‌کنند، پیاده‌سازی کنید. به
+                عنوان مثال، یک پوشه <code>domain</code> برای نهادها، یک پوشه
+                <code>use-cases</code> برای سرویس‌هایی که قوانین کسب‌وکار را
+                پیاده‌سازی می‌کنند، و یک پوشه <code>infrastructure</code> برای
+                کلاینت‌های HTTP و مخزن‌ها ایجاد کنید.
               </p>
               <p>
-                This approach also makes unit testing much easier because you
-                can mock dependencies and test use cases in isolation.
+                این رویکرد همچنین تست واحد را بسیار آسان‌تر می‌کند زیرا
+                می‌توانید وابستگی‌ها را شبیه‌سازی کرده و موارد استفاده را به
+                صورت مجزا تست کنید.
               </p>
             </div>
 
             <footer class="post-footer">
               <div class="post-tags">
                 <span class="tag">#Angular</span>
-                <span class="tag">#CleanArchitecture</span>
+                <span class="tag">#معماری‌تمیز</span>
                 <span class="tag">#TypeScript</span>
-                <span class="tag">#BestPractices</span>
+                <span class="tag">#بهترین‌روش‌ها</span>
               </div>
               <div class="post-share">
-                <span>Share:</span>
-                <a href="#">Twitter</a>
-                <a href="#">LinkedIn</a>
-                <a href="#">Dev.to</a>
+                <span>اشتراک‌گذاری:</span>
+                <a href="#">توییتر</a>
+                <a href="#">لینکدین</a>
+                <a href="#">دِو.تو</a>
               </div>
             </footer>
           </article>
 
           <!-- ===== AUTHOR BOX ===== -->
           <section class="author-box glass">
-            <img src="./assets/profile.png" alt="Saman Bahrami" />
+            <img src="./assets/profile.png" alt="سامان بهرامی" />
             <div>
-              <h3>Saman Bahrami</h3>
+              <h3>سامان بهرامی</h3>
               <p>
-                Software Engineer & Product Manager with 8+ years of experience
-                building scalable, user-centered digital products.
+                مهندس نرم‌افزار و مدیر محصول با بیش از ۸ سال تجربه در ساخت
+                محصولات دیجیتال مقیاس‌پذیر و کاربرمحور.
               </p>
               <a href="index.html#blog" class="primary-btn short-btn"
-                >View all articles</a
+                >مشاهده همه مقالات</a
               >
             </div>
           </section>
 
           <!-- ===== RELATED POSTS ===== -->
           <section class="related-posts glass">
-            <h2>Related Posts</h2>
+            <h2>مقالات مرتبط</h2>
             <div class="related-grid">
               <article class="related-item">
-                <img src="./assets/sample/sa02.jpg" alt="" />
+                <img
+                  src="./assets/sample/sa02.jpg"
+                  alt="تصویر مقاله مدیریت وضعیت"
+                />
                 <div>
-                  <h4>State Management with Redux Toolkit in React</h4>
-                  <time>May 10, 2025</time>
+                  <h4>مدیریت وضعیت با Redux Toolkit در React</h4>
+                  <time>۲۲ اردیبهشت ۱۴۰۴</time>
                 </div>
               </article>
               <article class="related-item">
-                <img src="./assets/sample/sa03.jpg" alt="" />
+                <img
+                  src="./assets/sample/sa03.jpg"
+                  alt="تصویر مقاله افزونه‌های VS Code"
+                />
                 <div>
-                  <h4>10 Essential VS Code Extensions for Developers</h4>
-                  <time>May 5, 2025</time>
+                  <h4>۱۰ افزونه ضروری VS Code برای توسعه‌دهندگان</h4>
+                  <time>۱۵ اردیبهشت ۱۴۰۴</time>
                 </div>
               </article>
               <article class="related-item">
-                <img src="./assets/sample/sa04.jpg" alt="" />
+                <img src="./assets/sample/sa04.jpg" alt="تصویر مقاله Docker" />
                 <div>
-                  <h4>Getting Started with Docker for Node.js Projects</h4>
-                  <time>Apr 28, 2025</time>
+                  <h4>شروع کار با Docker برای پروژه‌های Node.js</h4>
+                  <time>۸ اردیبهشت ۱۴۰۴</time>
                 </div>
               </article>
             </div>
@@ -322,76 +330,84 @@
 
           <!-- ===== COMMENTS ===== -->
           <section class="comments glass">
-            <h2>Comments (<span id="commentCountFooter">45</span>)</h2>
+            <h2>دیدگاه‌ها (<span id="commentCountFooter">۴۵</span>)</h2>
             <div class="comment-list">
               <div class="comment-item">
-                <img src="./assets/profile.png" alt="User" />
+                <img src="./assets/profile.png" alt="کاربر" />
                 <div>
-                  <strong>Ali Rezaei</strong>
-                  <time>2 hours ago</time>
-                  <p>Very helpful article, thanks for sharing!</p>
+                  <strong>علی رضایی</strong>
+                  <time>۲ ساعت پیش</time>
+                  <p>مقاله بسیار مفیدی بود، ممنون از اشتراک‌گذاری!</p>
                 </div>
               </div>
               <div class="comment-item">
-                <img src="./assets/profile.png" alt="User" />
+                <img src="./assets/profile.png" alt="کاربر" />
                 <div>
-                  <strong>Maryam Hosseini</strong>
-                  <time>5 hours ago</time>
-                  <p>Please continue this series, it's great.</p>
+                  <strong>مریم حسینی</strong>
+                  <time>۵ ساعت پیش</time>
+                  <p>لطفاً این مجموعه را ادامه دهید، عالی است.</p>
                 </div>
               </div>
             </div>
 
             <form class="comment-form">
-              <h3>Leave a comment</h3>
+              <h3>ثبت دیدگاه</h3>
               <div class="form-group">
-                <input type="text" placeholder="Your name" required />
+                <input type="text" placeholder="نام شما" required />
               </div>
               <div class="form-group">
-                <input type="email" placeholder="Your email" required />
+                <input type="email" placeholder="ایمیل شما" required />
               </div>
               <div class="form-group">
-                <textarea
-                  rows="4"
-                  placeholder="Your comment"
-                  required
-                ></textarea>
+                <textarea rows="4" placeholder="دیدگاه شما" required></textarea>
               </div>
-              <button type="submit" class="primary-btn">Post comment</button>
+              <button type="submit" class="primary-btn">ارسال دیدگاه</button>
             </form>
           </section>
 
           <!-- ===== FOOTER ===== -->
-          <footer class="footer glass">
+          <footer id="contact" class="footer glass">
             <div>
-              <a href="index.html" class="brand footer-brand"
-                ><span>SB</span></a
-              >
-              <p>Designing thoughtful experiences for the digital world.</p>
-              <small>© 2026 Saman Bahrami</small>
+              <a href="#home" class="brand footer-brand">
+                <span> SB </span>
+              </a>
+
+              <p>طراحی تجربه‌های هوشمندانه و هدفمند برای دنیای دیجیتال.</p>
+
+              <small> © ۲۰۲۶ سامان بهرامی </small>
             </div>
+
             <div>
-              <h3>Explore</h3>
-              <a href="index.html#about">About</a>
-              <a href="index.html#blog">Blog</a>
-              <a href="index.html#experience">Experience</a>
+              <h3>مشاهده کنید</h3>
+
+              <a href="#skill">مهارت‌ها</a>
+
+              <a href="#blog">بلاگ</a>
+
+              <a href="#experience">تجربیات</a>
             </div>
+
             <div>
-              <h3>Contact</h3>
-              <a href="mailto:hello@example.com">hello@example.com</a>
-              <a href="tel:+123456789">+1 234 567 89</a>
+              <h3>ارتباط</h3>
+
+              <a href="mailto:hello@example.com"> hello@example.com </a>
+
+              <a href="tel:+989123456789">۰۹۱۲ ۳۴۵ ۶۷۸۹</a>
+
               <button
                 id="openContactModal"
                 class="primary-btn short-btn"
                 type="button"
               >
-                Contact Me
+                تماس با من
               </button>
             </div>
+
             <div>
-              <h3>Social</h3>
+              <h3>شبکه‌های اجتماعی</h3>
+
               <div class="socials">
-                <a href="#" aria-label="Instagram">
+                <a href="#" aria-label="اینستاگرام">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -402,6 +418,7 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"
                   >
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path
@@ -411,7 +428,8 @@
                     <path d="M16.5 7.5v.01" />
                   </svg>
                 </a>
-                <a href="#" aria-label="Dribbble">
+
+                <a href="#" aria-label="دریبل">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -422,6 +440,7 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-brand-dribbble"
                   >
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
@@ -430,7 +449,8 @@
                     <path d="M3.1 10.75c5 0 9.814 -.38 15.314 -5" />
                   </svg>
                 </a>
-                <a href="#" aria-label="LinkedIn">
+
+                <a href="#" aria-label="لینکدین">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -441,6 +461,7 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"
                   >
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path d="M8 11v5" />
@@ -452,7 +473,7 @@
                     />
                   </svg>
                 </a>
-                <a href="#" aria-label="GitHub">
+                <a href="#" aria-label="گیت‌هاب">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -463,6 +484,7 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-brand-github"
                   >
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path
@@ -472,9 +494,11 @@
                 </a>
               </div>
             </div>
+
             <div>
-              <h3>Availability</h3>
-              <span>Available for selected projects.</span>
+              <h3>سایر امکانات</h3>
+
+              <span>لیست امکانات</span>
             </div>
           </footer>
         </main>
@@ -482,8 +506,8 @@
     </div>
 
     <!-- ===== MOBILE MENU ===== -->
-    <div id="mobileMenu" class="mobile-menu" aria-label="Mobile navigation">
-      <button id="menuClose" type="button" aria-label="Close menu">
+    <div id="mobileMenu" class="mobile-menu" aria-label="منوی موبایل">
+      <button id="menuClose" type="button" aria-label="بستن منو">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -500,16 +524,16 @@
           <path d="M6 6l12 12" />
         </svg>
       </button>
-      <a href="index.html#home">Home</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#experience">Experience</a>
-      <a href="index.html#work">Work</a>
-      <a href="index.html#blog">Blog</a>
-      <a href="index.html#contact">Contact</a>
+      <a href="index.html#home">خانه</a>
+      <a href="index.html#skill">مهارت</a>
+      <a href="index.html#experience">تجربه</a>
+      <a href="index.html#work">سابقه</a>
+      <a href="index.html#blog">بلاگ</a>
+      <a href="index.html#contact">تماس</a>
     </div>
 
     <!-- Back to top -->
-    <button id="backToTop" aria-label="Back to top">
+    <button id="backToTop" aria-label="بازگشت به بالا">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -538,50 +562,50 @@
           id="closeContactModal"
           class="contact-modal__close"
           type="button"
-          aria-label="Close contact form"
+          aria-label="بستن فرم تماس"
         >
           &times;
         </button>
         <div class="contact-modal__header">
-          <span class="eyebrow">Get in touch</span>
-          <h2 id="contactModalTitle">Let's work together</h2>
-          <p>Have a project in mind? Feel free to send me a message.</p>
+          <span class="eyebrow">ارتباط با من</span>
+          <h2 id="contactModalTitle">بیایید همکاری کنیم</h2>
+          <p>پروژه‌ای در ذهن دارید؟ با خیال راحت برای من پیام بفرستید.</p>
         </div>
         <form class="contact-form">
           <div class="contact-form__field">
-            <label for="contactName">Name</label>
+            <label for="contactName">نام</label>
             <input
               id="contactName"
               type="text"
               name="name"
-              placeholder="Your name"
+              placeholder="نام شما"
               required
             />
           </div>
           <div class="contact-form__field">
-            <label for="contactEmail">Email</label>
+            <label for="contactEmail">ایمیل</label>
             <input
               id="contactEmail"
               type="email"
               name="email"
-              placeholder="your@email.com"
+              placeholder="ایمیل شما"
               required
             />
           </div>
           <div class="contact-form__field">
-            <label for="contactMessage">Message</label>
+            <label for="contactMessage">پیام</label>
             <textarea
               id="contactMessage"
               name="message"
               rows="5"
-              placeholder="Tell me about your project..."
+              placeholder="در مورد پروژه‌تان برایم بنویسید..."
               required
               minlength="5"
               maxlength="200"
             ></textarea>
           </div>
           <button type="submit" class="primary-btn contact-form__submit">
-            Send Message
+            ارسال پیام
           </button>
         </form>
       </div>

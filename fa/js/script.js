@@ -12,9 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const loaderLineTwo = document.getElementById("loaderLineTwo");
 
   if (loader && loaderLineOne && loaderLineTwo) {
-    const firstText = "Hi, I'm Saman Bahrami.";
+    const firstText = "سلام ، من سامان بهرامی هستم.";
 
-    const secondText = "a Software Engineer & Product Manager . . .";
+    const secondText = "یک مهندس نرم افزار و مدیر محصول...";
 
     let firstIndex = 0;
 
@@ -401,18 +401,21 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // FADE IN ANIMATION
-  const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
 
-    entry.target.classList.add("show");
-    observer.unobserve(entry.target);
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.15,
+    },
+  );
+
+  document.querySelectorAll(".fade-up").forEach((el) => {
+    observer.observe(el);
   });
-}, {
-  threshold: 0.15
-});
-
-document.querySelectorAll(".fade-up").forEach(el => {
-  observer.observe(el);
-});
 });

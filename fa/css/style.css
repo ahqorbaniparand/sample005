@@ -1691,7 +1691,6 @@ body {
 }
 
 /* ---------- Blog ---------- */
-
 .blog-wrapper {
   width: 100%;
   margin-top: 40px;
@@ -1718,27 +1717,36 @@ body {
   color: var(--muted);
   margin-top: 0.25rem;
   font-weight: 400;
-  border-left: 4px solid var(--primary);
-  padding-left: 1rem;
+  border-right: 4px solid var(--primary);
+  padding-right: 1rem;
 }
 
 .carousel-container {
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-lg);
+  width: 100%;
 }
 
 .carousel-track {
   display: flex;
-  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  gap: 1.5rem;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  gap: 24px;
   padding: 0.25rem 0;
+  width: 100%;
+  flex-wrap: nowrap;
+  will-change: transform;
+}
+
+.blog-link {
+  flex: 0 0 auto;
+  min-width: 0;
+  display: block;
 }
 
 .blog-card {
-  flex: 0 0 auto;
   border-radius: var(--radius-lg);
-  padding: 3rem 1.5rem;
+  padding: 1.5rem 1.25rem;
   border: 1px solid var(--border);
   box-shadow: var(--shadow-soft);
   transition:
@@ -1747,6 +1755,8 @@ body {
     border-color 0.2s;
   display: flex;
   flex-direction: column;
+  height: 100%;
+  background: var(--surface);
 }
 .blog-card:hover {
   box-shadow: var(--shadow);
@@ -1777,7 +1787,7 @@ body {
 }
 
 .card-title {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--text);
   line-height: 1.4;
@@ -1785,7 +1795,7 @@ body {
 }
 
 .card-description {
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   color: var(--text-soft);
   line-height: 1.6;
   margin-bottom: 1.25rem;
@@ -1800,7 +1810,7 @@ body {
   border-top: 1px solid var(--line);
   padding-top: 1rem;
   margin-top: auto;
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   color: var(--muted);
   gap: 0.3rem 0.5rem;
 }
@@ -1819,16 +1829,19 @@ body {
   gap: 0.25rem;
 }
 .meta-info i {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--muted-light);
 }
 
+/* ===== Carousel Controls ===== */
 .carousel-controls {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1.2rem;
   margin-top: 2rem;
+  position: relative;
+  z-index: 10;
 }
 
 .btn-prev,
@@ -1840,26 +1853,40 @@ body {
   font-size: 1.1rem;
   color: var(--text);
   cursor: pointer;
-  transition: all 0.15s;
+  transition: all 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: var(--shadow-soft);
+  background: var(--surface);
+  position: relative;
+  z-index: 20;
+  flex-shrink: 0;
 }
 .btn-prev:hover,
 .btn-next:hover {
   border-color: var(--primary);
   color: var(--primary);
   box-shadow: var(--shadow);
+  background: var(--primary-soft);
 }
 .btn-prev:active,
 .btn-next:active {
-  transform: scale(0.94);
+  transform: scale(0.92);
+}
+
+.btn-prev svg,
+.btn-next svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+  stroke: currentColor;
 }
 
 .dots {
   display: flex;
   gap: 0.6rem;
+  align-items: center;
 }
 .dot {
   width: 10px;
@@ -1872,10 +1899,11 @@ body {
     background 0.2s,
     transform 0.15s;
   padding: 0;
+  flex-shrink: 0;
 }
 .dot.active {
   background: var(--primary);
-  transform: scale(1.2);
+  transform: scale(1.25);
 }
 .dot:hover {
   background: var(--primary);
@@ -1884,6 +1912,7 @@ body {
   background: var(--primary);
 }
 
+/* ===== Responsive Blog ===== */
 @media (max-width: 992px) {
   .blog-wrapper {
     padding: 2rem 1.5rem;
@@ -1899,13 +1928,13 @@ body {
   }
   .blog-header .subtitle {
     font-size: 0.9rem;
-    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
   .blog-card {
     padding: 1.25rem;
   }
   .card-title {
-    font-size: 1.05rem;
+    font-size: 1rem;
   }
   .carousel-controls {
     gap: 0.8rem;
@@ -1915,6 +1944,10 @@ body {
   .btn-next {
     width: 38px;
     height: 38px;
-    font-size: 0.9rem;
+  }
+  .btn-prev svg,
+  .btn-next svg {
+    width: 18px;
+    height: 18px;
   }
 }
