@@ -1,0 +1,1510 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description" content="Personal portfolio website" />
+
+    <title>Saman Bahrami</title>
+
+     <link rel="icon" href="./assets/sb.png" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/loading.css" />
+  </head>
+
+  <body>
+    <!-- scroll progress -->
+    <div class="scroll-progress">
+      <span class="scroll-progress__glow"></span>
+    </div>
+
+    <!-- loader page -->
+    <div id="loader" class="loader">
+      <div class="loader-content">
+        <p id="loaderLineOne" class="loader-line"></p>
+
+        <p id="loaderLineTwo" class="loader-line loader-line-smaller"></p>
+      </div>
+    </div>
+
+    <!-- =========================================
+       SITE HEADER
+  ========================================== -->
+
+    <header class="topbar glass">
+      <a href="#home" class="brand" aria-label="Go to homepage">
+        <span>SB</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+
+      <nav class="desktop-nav nav" aria-label="Main navigation">
+        <a href="#home" class="active"> Home </a>
+
+        <a href="#skill"> Skill </a>
+
+        <a href="#experience"> Experience </a>
+
+        <a href="#work"> Work </a>
+
+        <a href="#blog"> Blog </a>
+
+        <a href="#contact"> Contact </a>
+      </nav>
+
+      <!-- Header Actions -->
+
+      <div class="top-actions">
+        <!-- Theme Toggle -->
+
+        <button
+          class="theme-switch"
+          type="button"
+          data-theme-toggle
+          aria-label="Switch to dark theme"
+          aria-pressed="false"
+        >
+          <span class="theme-icon theme-icon--sun" aria-hidden="true">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M8 12a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
+              <path
+                d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"
+              />
+            </svg>
+          </span>
+
+          <span class="theme-icon theme-icon--moon" aria-hidden="true">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454l0 .008"
+              />
+            </svg>
+          </span>
+        </button>
+
+        <!-- Mobile Menu Button -->
+
+        <button
+          id="menuOpen"
+          class="menu-btn"
+          type="button"
+          aria-label="Open menu"
+          aria-controls="mobileMenu"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M4 6l16 0" />
+            <path d="M4 12l16 0" />
+            <path d="M4 18l16 0" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- =========================================
+       APPLICATION LAYOUT
+  ========================================== -->
+
+    <div class="site">
+      <div class="app-grid">
+        <!-- =====================================
+           SIDEBAR
+      ====================================== -->
+
+        <aside class="side-nav glass sidebar" aria-label="Section navigation">
+          <a href="#home" class="active" aria-label="Home">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-home"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
+              <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+              <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+            </svg>
+          </a>
+
+          <a href="#skill" aria-label="Skill">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-file-check"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+              <path
+                d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2"
+              />
+              <path d="M9 15l2 2l4 -4" />
+            </svg>
+          </a>
+
+          <a href="#experience" aria-label="Experience">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-briefcase"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M3 9a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2l0 -9"
+              />
+              <path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2" />
+              <path d="M12 12l0 .01" />
+              <path d="M3 13a20 20 0 0 0 18 0" />
+            </svg>
+          </a>
+
+          <a href="#work" aria-label="Work">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-device-desktop"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M3 5a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-10"
+              />
+              <path d="M7 20h10" />
+              <path d="M9 16v4" />
+              <path d="M15 16v4" />
+            </svg>
+          </a>
+
+          <a href="#blog" aria-label="Blog">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-news"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M16 6h3a1 1 0 0 1 1 1v11a2 2 0 0 1 -4 0v-13a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1v12a3 3 0 0 0 3 3h11"
+              />
+              <path d="M8 8l4 0" />
+              <path d="M8 12l4 0" />
+              <path d="M8 16l4 0" />
+            </svg>
+          </a>
+
+          <a href="#contact" aria-label="Contact">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-mail"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10"
+              />
+              <path d="M3 7l9 6l9 -6" />
+            </svg>
+          </a>
+        </aside>
+
+        <!-- =====================================
+           MAIN CONTENT
+      ====================================== -->
+
+        <main class="content">
+          <!-- ===================================
+             HERO
+        ==================================== -->
+
+          <section id="home" class="hero">
+            <!-- Hero Intro -->
+
+            <article class="hero-intro glass">
+              <div class="hero-photo">
+                <div class="photo-ring" aria-hidden="true"></div>
+
+                <img
+                  src="./assets/profile.png"
+                  alt="Profile portrait"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="hero-copy">
+                <span class="eyebrow"> Hello, I'm </span>
+
+                <h1>
+                  Saman
+                  <strong> Bahrami </strong>
+                </h1>
+
+                <h2>Software Engineer & Product Manager</h2>
+
+                <p>
+                  I am a Software Engineer and Product Manager with a passion
+                  for building scalable, user-centered digital products. I enjoy
+                  bridging the gap between technology and business by
+                  transforming ideas into practical solutions. With a strong
+                  focus on software architecture, product strategy, and user
+                  experience, I strive to deliver high-quality products that
+                  create real value for users and organizations.
+                </p>
+
+                <div class="actions">
+                  <a href="#contact" class="primary-btn">
+                    Download My Resume
+                    <span aria-hidden="true">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-up-right"
+                      >
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M17 7l-10 10" />
+                        <path d="M8 7l9 0l0 9" />
+                      </svg>
+                    </span>
+                  </a>
+
+                  <a href="#work" class="round-btn" aria-label="View work">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-down-right"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M7 7l10 10" />
+                      <path d="M17 8l0 9l-9 0" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Services -->
+
+            <section class="services glass">
+              <h2>What I do</h2>
+
+              <article class="service">
+                <span aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-sparkles"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                      d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m0 -12a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m-7 12a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6"
+                    />
+                  </svg>
+                </span>
+
+                <div>
+                  <b> Product Strategy </b>
+
+                  <p>
+                    Define product vision, prioritize features, and align
+                    business goals with user needs to deliver impactful digital
+                    products.
+                  </p>
+                </div>
+              </article>
+
+              <article class="service">
+                <span aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-diamond"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                      d="M6 5h12l3 5l-8.5 9.5a.7 .7 0 0 1 -1 0l-8.5 -9.5l3 -5"
+                    />
+                    <path d="M10 12l-2 -2.2l.6 -1" />
+                  </svg>
+                </span>
+
+                <div>
+                  <b> Software Architecture </b>
+
+                  <p>
+                    Design scalable, secure, and maintainable software systems
+                    using modern technologies and engineering best practices.
+                  </p>
+                </div>
+              </article>
+
+              <article class="service">
+                <span aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-circle"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+                  </svg>
+                </span>
+
+                <div>
+                  <b> Team Leadership </b>
+
+                  <p>
+                    Collaborate with cross-functional teams, streamline
+                    development processes, and ensure successful product
+                    delivery from concept to launch.
+                  </p>
+                </div>
+              </article>
+            </section>
+          </section>
+
+          <!-- ===================================
+             ABOUT / STATS
+        ==================================== -->
+
+          <section id="skill" class="stats glass">
+            <div>
+              <b> 8+ </b>
+
+              <span> Years experience </span>
+            </div>
+
+            <div>
+              <b> 120+ </b>
+
+              <span> Projects delivered </span>
+            </div>
+
+            <div>
+              <b> 40+ </b>
+
+              <span> Happy clients </span>
+            </div>
+
+            <div>
+              <b> 12 </b>
+
+              <span> Testimonials </span>
+            </div>
+          </section>
+
+          <!-- ===================================
+             SKILLS
+        ==================================== -->
+
+          <section class="skills-row">
+            <!-- Expertise -->
+
+            <article class="expertise glass">
+              <h2>Expertise</h2>
+
+              <div class="skill">
+                <div>
+                  <span> JavaScript / TypeScript </span>
+
+                  <span> 95% </span>
+                </div>
+
+                <i>
+                  <em data-width="95"></em>
+                </i>
+              </div>
+
+              <div class="skill">
+                <div>
+                  <span> React / Next </span>
+
+                  <span> 80% </span>
+                </div>
+
+                <i>
+                  <em data-width="80"></em>
+                </i>
+              </div>
+
+              <div class="skill">
+                <div>
+                  <span> Node.js </span>
+
+                  <span> 90% </span>
+                </div>
+
+                <i>
+                  <em data-width="90"></em>
+                </i>
+              </div>
+
+              <div class="skill">
+                <div>
+                  <span> System Design </span>
+
+                  <span> 78% </span>
+                </div>
+
+                <i>
+                  <em data-width="78"></em>
+                </i>
+              </div>
+              <div class="skill">
+                <div>
+                  <span> Cloud (AWS) </span>
+
+                  <span> 90% </span>
+                </div>
+
+                <i>
+                  <em data-width="90"></em>
+                </i>
+              </div>
+              <div class="skill">
+                <div>
+                  <span> Docker & Kubernetes </span>
+
+                  <span> 88% </span>
+                </div>
+
+                <i>
+                  <em data-width="88"></em>
+                </i>
+              </div>
+              <div class="skill">
+                <div>
+                  <span> SQL & NoSQL Databases </span>
+
+                  <span> 65% </span>
+                </div>
+
+                <i>
+                  <em data-width="65"></em>
+                </i>
+              </div>
+              <div class="skill">
+                <div>
+                  <span> Git & CI/CD </span>
+
+                  <span> 98% </span>
+                </div>
+
+                <i>
+                  <em data-width="98"></em>
+                </i>
+              </div>
+              <div class="skill">
+                <div>
+                  <span> Product Management </span>
+
+                  <span> 90% </span>
+                </div>
+
+                <i>
+                  <em data-width="90"></em>
+                </i>
+              </div>
+
+              <div class="skill">
+                <div>
+                  <span> Agile & Scrum </span>
+
+                  <span> 98% </span>
+                </div>
+
+                <i>
+                  <em data-width="98"></em>
+                </i>
+              </div>
+            </article>
+
+            <!-- Principles -->
+
+            <article class="principles glass">
+              <div class="principle">
+                <span aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-diamond"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                      d="M6 5h12l3 5l-8.5 9.5a.7 .7 0 0 1 -1 0l-8.5 -9.5l3 -5"
+                    />
+                    <path d="M10 12l-2 -2.2l.6 -1" />
+                  </svg>
+                </span>
+
+                <div>
+                  <b> AWS & Docker </b>
+
+                  <p>
+                    Deploy, monitor, and scale cloud-native applications with
+                    containerized environments, automated workflows, and
+                    reliable infrastructure.
+                  </p>
+                </div>
+              </div>
+
+              <div class="principle">
+                <span aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-sparkle"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                      d="M21 12c-6.597 0 -9 2.403 -9 9c0 -6.597 -2.403 -9 -9 -9c6.597 0 9 -2.403 9 -9c0 6.597 2.403 9 9 9"
+                    />
+                  </svg>
+                </span>
+
+                <div>
+                  <b> Product Strategy & Agile </b>
+
+                  <p>
+                    Lead product planning, define roadmaps, prioritize features,
+                    and coordinate cross-functional teams to deliver valuable
+                    software efficiently.
+                  </p>
+                </div>
+              </div>
+
+              <div class="principle">
+                <span aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-up-right"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M17 7l-10 10" />
+                    <path d="M8 7l9 0l0 9" />
+                  </svg>
+                </span>
+
+                <div>
+                  <b> Node.js & NestJS </b>
+
+                  <p>
+                    Develop scalable backend services, secure RESTful APIs, and
+                    enterprise-grade server architectures using modern
+                    development practices.
+                  </p>
+                </div>
+              </div>
+
+              <div class="principle">
+                <span aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-infinity"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                      d="M9.828 9.172a4 4 0 1 0 0 5.656a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828"
+                    />
+                  </svg>
+                </span>
+
+                <div>
+                  <b> React & Next.js </b>
+
+                  <p>
+                    Build modern, high-performance web applications with
+                    server-side rendering, reusable components, and exceptional
+                    user experiences.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </section>
+
+          <!-- ===================================
+             EXPERIENCE
+        ==================================== -->
+
+          <section id="experience" class="experience glass">
+            <div class="section-head">
+              <h2>Experience</h2>
+            </div>
+
+            <article class="experience-row">
+              <span class="timeline-dot" aria-hidden="true"></span>
+
+              <div>
+                <b> Senior Software Engineer </b>
+
+                <small> Studio Company </small>
+              </div>
+
+              <time> 2022 — Present </time>
+
+              <p>
+                Experienced software engineer specializing in designing,
+                developing, and maintaining scalable, high-quality software
+                solutions while driving technical improvements and mentoring
+                team members. Senior Software Engineer focused on designing
+                enterprise-grade applications, improving system architecture,
+                and delivering reliable software solutions through clean code
+                and best engineering practices.
+              </p>
+            </article>
+
+            <article class="experience-row">
+              <span class="timeline-dot" aria-hidden="true"></span>
+
+              <div>
+                <b> Senior Product Manager </b>
+
+                <small> Digital Agency </small>
+              </div>
+
+              <time> 2019 — 2022 </time>
+
+              <p>
+                Experienced Senior Product Manager responsible for defining
+                product vision, developing strategic roadmaps, and leading
+                cross-functional teams to deliver successful digital products.
+                Skilled in analyzing customer needs, prioritizing features,
+                managing product lifecycles, and driving continuous improvements
+                based on data and user feedback.
+              </p>
+            </article>
+
+            <article class="experience-row">
+              <span class="timeline-dot" aria-hidden="true"></span>
+
+              <div>
+                <b> Software Engineer </b>
+
+                <small> Creative Studio </small>
+              </div>
+
+              <time> 2017 — 2019 </time>
+
+              <p>
+                Software Engineer focused on designing, developing, and
+                maintaining reliable software solutions. Experienced in building
+                scalable applications, writing clean and maintainable code, and
+                collaborating with cross-functional teams to deliver
+                high-quality products. Building scalable software solutions,
+                leading technical decisions.
+              </p>
+            </article>
+          </section>
+
+          <!-- ===================================
+             WORK
+        ==================================== -->
+
+          <section id="work" class="work">
+            <div class="section-head">
+              <h2>Projects</h2>
+            </div>
+
+            <div class="projects">
+              <article class="project glass">
+                <div class="project-cover">
+                  <img
+                    src="./assets/sample/sa01.jpg"
+                    alt="Project 1"
+                    loading="lazy"
+                  />
+                </div>
+
+                <h3>Modern Enterprise Web Platform</h3>
+
+                <p>A modern Enterprise experience designed for clarity.</p>
+              </article>
+
+              <article class="project glass">
+                <div class="project-cover">
+                  <img
+                    src="./assets/sample/sa02.jpg"
+                    alt="Project 2"
+                    loading="lazy"
+                  />
+                </div>
+
+                <h3>Creative Platform</h3>
+
+                <p>A flexible platform for creators and teams.</p>
+              </article>
+
+              <article class="project glass">
+                <div class="project-cover">
+                  <img
+                    src="./assets/sample/sa03.jpg"
+                    alt="Project 3"
+                    loading="lazy"
+                  />
+                </div>
+
+                <h3>Mobile Experience</h3>
+
+                <p>A focused mobile product with a simple interface.</p>
+              </article>
+
+              <article class="project glass">
+                <div class="project-cover">
+                  <img
+                    src="./assets/sample/sa04.jpg"
+                    alt="Project 3"
+                    loading="lazy"
+                  />
+                </div>
+
+                <h3>E-Commerce Platform</h3>
+
+                <p>A focused mobile product with a simple interface.</p>
+              </article>
+
+              <article class="project glass">
+                <div class="project-cover">
+                  <img
+                    src="./assets/sample/sa05.jpg"
+                    alt="Project 3"
+                    loading="lazy"
+                  />
+                </div>
+
+                <h3>Interactive Web Experience Platform</h3>
+
+                <p>An interactive web platform designed to deliver...</p>
+              </article>
+              <article class="project glass">
+                <div class="project-cover">
+                  <img
+                    src="./assets/sample/sa06.jpg"
+                    alt="Project 3"
+                    loading="lazy"
+                  />
+                </div>
+
+                <h3>Enterprise CRM Management System</h3>
+
+                <p>
+                  A scalable CRM solution built for managing customer data...
+                </p>
+              </article>
+              <article class="project glass">
+                <div class="project-cover">
+                  <img
+                    src="./assets/sample/sa01.jpg"
+                    alt="Project 1"
+                    loading="lazy"
+                  />
+                </div>
+
+                <h3>Modern Enterprise Web Platform</h3>
+
+                <p>A modern Enterprise experience designed for clarity.</p>
+              </article>
+
+              <article class="project glass">
+                <div class="project-cover">
+                  <img
+                    src="./assets/sample/sa02.jpg"
+                    alt="Project 2"
+                    loading="lazy"
+                  />
+                </div>
+
+                <h3>Creative Platform</h3>
+
+                <p>A flexible platform for creators and teams.</p>
+              </article>
+              <article class="project glass">
+                <div class="project-cover">
+                  <img
+                    src="./assets/sample/sa03.jpg"
+                    alt="Project 3"
+                    loading="lazy"
+                  />
+                </div>
+
+                <h3>Mobile Experience</h3>
+
+                <p>A focused mobile product with a simple interface.</p>
+              </article>
+
+              <article class="project glass">
+                <div class="project-cover">
+                  <img
+                    src="./assets/sample/sa04.jpg"
+                    alt="Project 3"
+                    loading="lazy"
+                  />
+                </div>
+
+                <h3>E-Commerce Platform</h3>
+
+                <p>A focused mobile product with a simple interface.</p>
+              </article>
+            </div>
+          </section>
+
+          <!-- ===================================
+             BLOG 
+        ==================================== -->
+
+          <section id="blog" class="blog-wrapper glass">
+            <!-- header -->
+            <header class="blog-header">
+              <h1>Recent Articles</h1>
+              <p class="subtitle">
+                Thoughts, tutorials, and insights on software development,
+                product strategy, and more.
+              </p>
+            </header>
+
+            <!-- carousel -->
+            <div class="carousel-container">
+              <div class="carousel-track" id="carouselTrack">
+                <!-- کارت‌ها به صورت هاردکد در HTML -->
+                <a href="post.html" class="blog-link">
+                  <div class="blog-card">
+                    <span class="card-category development">Development</span>
+                    <h3 class="card-title">
+                      Clean Architecture in Angular Applications
+                    </h3>
+                    <p class="card-description">
+                      A practical guide to implementing clean architecture with
+                      Angular for scalable enterprise applications.
+                    </p>
+                    <div class="card-footer">
+                      <span class="author">Seman Bahrami</span>
+                      <div class="meta-info">
+                        <span
+                          ><i class="far fa-calendar-alt"></i> May 12,
+                          2025</span
+                        >
+                        <span><i class="far fa-clock"></i> 6 min read</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a href="post.html" class="blog-link">
+                  <div class="blog-card">
+                    <span class="card-category development">Development</span>
+                    <h3 class="card-title">
+                      Clean Architecture in Angular Applications
+                    </h3>
+                    <p class="card-description">
+                      A practical guide to implementing clean architecture with
+                      Angular for scalable enterprise applications.
+                    </p>
+                    <div class="card-footer">
+                      <span class="author">Seman Bahrami</span>
+                      <div class="meta-info">
+                        <span
+                          ><i class="far fa-calendar-alt"></i> May 12,
+                          2025</span
+                        >
+                        <span><i class="far fa-clock"></i> 6 min read</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a href="post.html" class="blog-link">
+                  <div class="blog-card">
+                    <span class="card-category product">Product</span>
+                    <h3 class="card-title">How I Approach Product Strategy</h3>
+                    <p class="card-description">
+                      Key principles and frameworks I use to build user-centered
+                      products that create real value.
+                    </p>
+                    <div class="card-footer">
+                      <span class="author">Seman Bahrami</span>
+                      <div class="meta-info">
+                        <span
+                          ><i class="far fa-calendar-alt"></i> Apr 28,
+                          2025</span
+                        >
+                        <span><i class="far fa-clock"></i> 7 min read</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a href="post.html" class="blog-link">
+                  <div class="blog-card">
+                    <span class="card-category tips">Tips &amp; Tricks</span>
+                    <h3 class="card-title">
+                      10 VS Code Extensions I Can't Live Without
+                    </h3>
+                    <p class="card-description">
+                      A list of VS Code extensions that supercharge my
+                      productivity as a developer.
+                    </p>
+                    <div class="card-footer">
+                      <span class="author">Seman Bahrami</span>
+                      <div class="meta-info">
+                        <span
+                          ><i class="far fa-calendar-alt"></i> Apr 15,
+                          2025</span
+                        >
+                        <span><i class="far fa-clock"></i> 4 min read</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a href="post.html" class="blog-link">
+                  <div class="blog-card">
+                    <span class="card-category development">Development</span>
+                    <h3 class="card-title">
+                      Clean Architecture in Angular Applications
+                    </h3>
+                    <p class="card-description">
+                      A practical guide to implementing clean architecture with
+                      Angular for scalable enterprise applications.
+                    </p>
+                    <div class="card-footer">
+                      <span class="author">Seman Bahrami</span>
+                      <div class="meta-info">
+                        <span
+                          ><i class="far fa-calendar-alt"></i> May 12,
+                          2025</span
+                        >
+                        <span><i class="far fa-clock"></i> 6 min read</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a href="post.html" class="blog-link">
+                  <div class="blog-card">
+                    <span class="card-category development">Development</span>
+                    <h3 class="card-title">
+                      Clean Architecture in Angular Applications
+                    </h3>
+                    <p class="card-description">
+                      A practical guide to implementing clean architecture with
+                      Angular for scalable enterprise applications.
+                    </p>
+                    <div class="card-footer">
+                      <span class="author">Seman Bahrami</span>
+                      <div class="meta-info">
+                        <span
+                          ><i class="far fa-calendar-alt"></i> May 12,
+                          2025</span
+                        >
+                        <span><i class="far fa-clock"></i> 6 min read</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a href="post.html" class="blog-link">
+                  <div class="blog-card">
+                    <span class="card-category development">Development</span>
+                    <h3 class="card-title">
+                      Clean Architecture in Angular Applications
+                    </h3>
+                    <p class="card-description">
+                      A practical guide to implementing clean architecture with
+                      Angular for scalable enterprise applications.
+                    </p>
+                    <div class="card-footer">
+                      <span class="author">Seman Bahrami</span>
+                      <div class="meta-info">
+                        <span
+                          ><i class="far fa-calendar-alt"></i> May 12,
+                          2025</span
+                        >
+                        <span><i class="far fa-clock"></i> 6 min read</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a href="post.html" class="blog-link">
+                  <div class="blog-card">
+                    <span class="card-category development">Development</span>
+                    <h3 class="card-title">
+                      Clean Architecture in Angular Applications
+                    </h3>
+                    <p class="card-description">
+                      A practical guide to implementing clean architecture with
+                      Angular for scalable enterprise applications.
+                    </p>
+                    <div class="card-footer">
+                      <span class="author">Seman Bahrami</span>
+                      <div class="meta-info">
+                        <span
+                          ><i class="far fa-calendar-alt"></i> May 12,
+                          2025</span
+                        >
+                        <span><i class="far fa-clock"></i> 6 min read</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <!-- در صورت نیاز کارت‌های بیشتر اینجا اضافه کنید -->
+              </div>
+            </div>
+            <!-- controls -->
+            <div class="carousel-controls">
+              <button class="btn-prev" id="prevBtn" aria-label="قبلی">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M15 6l-6 6l6 6" />
+                </svg>
+              </button>
+              <div class="dots" id="dotsContainer"></div>
+              <button class="btn-next" id="nextBtn" aria-label="بعدی">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M9 6l6 6l-6 6" />
+                </svg>
+              </button>
+            </div>
+          </section>
+
+          <!-- ===================================
+             FOOTER / CONTACT
+        ==================================== -->
+
+          <footer id="contact" class="footer glass">
+            <div>
+              <a href="#home" class="brand footer-brand">
+                <span> SB </span>
+              </a>
+
+              <p>Designing thoughtful experiences for the digital world.</p>
+
+              <small> © 2026 Saman Bahrami </small>
+            </div>
+
+            <div>
+              <h3>Explore</h3>
+
+              <a href="#about"> About </a>
+
+              <a href="#blog"> Blog </a>
+
+              <a href="#experience"> Experience </a>
+            </div>
+
+            <div>
+              <h3>Contact</h3>
+
+              <a href="mailto:hello@example.com"> hello@example.com </a>
+
+              <a href="tel:+123456789"> +1 234 567 89 </a>
+
+              <button
+                id="openContactModal"
+                class="primary-btn short-btn"
+                type="button"
+              >
+                Contact Me
+              </button>
+            </div>
+
+            <div>
+              <h3>Social</h3>
+
+              <div class="socials">
+                <a href="#" aria-label="Instagram">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                      d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4l0 -8"
+                    />
+                    <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                    <path d="M16.5 7.5v.01" />
+                  </svg>
+                </a>
+
+                <a href="#" aria-label="Dribbble">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-brand-dribbble"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+                    <path d="M9 3.6c5 6 7 10.5 7.5 16.2" />
+                    <path d="M6.4 19c3.5 -3.5 6 -6.5 14.5 -6.4" />
+                    <path d="M3.1 10.75c5 0 9.814 -.38 15.314 -5" />
+                  </svg>
+                </a>
+
+                <a href="#" aria-label="LinkedIn">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M8 11v5" />
+                    <path d="M8 8v.01" />
+                    <path d="M12 16v-5" />
+                    <path d="M16 16v-3a2 2 0 1 0 -4 0" />
+                    <path
+                      d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4l0 -10"
+                    />
+                  </svg>
+                </a>
+                <a href="#" aria-label="Git Hub">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-brand-github"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                      d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <h3>Availability</h3>
+
+              <span> Available for selected projects. </span>
+            </div>
+          </footer>
+        </main>
+      </div>
+    </div>
+
+    <!-- =========================================
+       MOBILE MENU
+  ========================================== -->
+
+    <div id="mobileMenu" class="mobile-menu" aria-label="Mobile navigation">
+      <button id="menuClose" type="button" aria-label="Close menu">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-x"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M18 6l-12 12" />
+          <path d="M6 6l12 12" />
+        </svg>
+      </button>
+
+      <a href="#home"> Home </a>
+
+      <a href="#about"> About </a>
+
+      <a href="#experience"> Experience </a>
+
+      <a href="#work"> Work </a>
+
+      <a href="#blog"> Blog </a>
+
+      <a href="#contact"> Contact </a>
+    </div>
+
+    <!-- /* back to top button */ -->
+    <button id="backToTop" aria-label="Back to top">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-up"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M6 15l6 -6l6 6" />
+      </svg>
+    </button>
+
+    <!-- Contact Modal -->
+
+    <div id="contactModal" class="contact-modal" aria-hidden="true">
+      <div
+        class="contact-modal__content glass"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="contactModalTitle"
+      >
+        <button
+          id="closeContactModal"
+          class="contact-modal__close"
+          type="button"
+          aria-label="Close contact form"
+        >
+          &times;
+        </button>
+
+        <div class="contact-modal__header">
+          <span class="eyebrow"> Get in touch </span>
+
+          <h2 id="contactModalTitle">Let's work together</h2>
+
+          <p>Have a project in mind? Feel free to send me a message.</p>
+        </div>
+
+        <form class="contact-form">
+          <div class="contact-form__field">
+            <label for="contactName"> Name </label>
+
+            <input
+              id="contactName"
+              type="text"
+              name="name"
+              placeholder="Your name"
+              required
+            />
+          </div>
+
+          <div class="contact-form__field">
+            <label for="contactEmail"> Email </label>
+
+            <input
+              id="contactEmail"
+              type="email"
+              name="email"
+              placeholder="your@email.com"
+              required
+            />
+          </div>
+
+          <div class="contact-form__field">
+            <label for="contactMessage"> Message </label>
+
+            <textarea
+              id="contactMessage"
+              name="message"
+              rows="5"
+              placeholder="Tell me about your project..."
+              required
+              minlength="2"
+              maxlength="5"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="primary-btn contact-form__submit">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- /* custom cursor */ -->
+    <div class="cursor"></div>
+
+    <!-- =========================================
+       JAVASCRIPT
+  ========================================== -->
+
+    <script src="./js/tabler.min.js"></script>
+    <script src="./js/lenis.min.js"></script>
+    <script src="./js/carousel.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
